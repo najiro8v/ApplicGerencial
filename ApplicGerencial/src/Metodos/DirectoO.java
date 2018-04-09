@@ -10,7 +10,6 @@ package Metodos;
  * @author casa
  */
 public class DirectoO {
-    private double Venta,CostoDeVenta,InvInicial,InvFinal,
-                    CostoDeArticuloManofacturado,UtilidadBruta,
-                    GastoVariableDeVenta,GastoDeVenta_Y_Administracion;
+    
+    
 }
