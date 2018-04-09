@@ -78,6 +78,7 @@ public class CAbsorbente extends javax.swing.JFrame {
 
         jLabel1.setText("Ventas");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel2.setText("Costo de Venta");
 
         jLabel3.setText("Inv. Inicial");
@@ -90,6 +91,7 @@ public class CAbsorbente extends javax.swing.JFrame {
 
         jLabel7.setText("Utilidad Bruta");
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel8.setText("Gasto de Operacion");
 
         jLabel9.setText("Gasto Variable de Venta");

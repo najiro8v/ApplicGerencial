@@ -213,6 +213,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="3"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Costo de Venta"/>
           </Properties>
         </Component>
@@ -243,6 +246,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="3"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Gasto de Operacion"/>
           </Properties>
         </Component>
