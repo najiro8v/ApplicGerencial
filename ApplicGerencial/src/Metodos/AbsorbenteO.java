@@ -5,11 +5,16 @@
  */
 package Metodos;
 
+import java.io.Serializable;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author casa
  */
-public class AbsorbenteO {
+public class AbsorbenteO implements Serializable  {
     private double Venta=0/*Continene la Venta pero en precio montario*/,
                     CostoDeVenta=0/*Continene el Costo de Venta pero en precio montario*/,
                     InvInicial=0/*Continene el inventario pero en precio montario*/,
@@ -32,5 +37,35 @@ public class AbsorbenteO {
     {
         return INVfinalCANT;
     }
-    
+    public static void main(String [] args) 
+    {
+        File archivo=new File("m.txt");
+        FileOutputStream salida=null;
+        FileInputStream entrada=null;
+        ObjectInputStream writer=null;
+        ObjectOutputStream reader=null;
+        AbsorbenteO temop=null;
+        ArrayList <AbsorbenteO> tempA=new ArrayList<>();
+        try {
+            archivo.createNewFile();
+            salida=new FileOutputStream(archivo);
+            reader=new ObjectOutputStream(salida);
+            temop=new AbsorbenteO();
+            reader.writeObject(temop);
+        } catch (IOException ex) {
+            Logger.getLogger(AbsorbenteO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally{
+        if(salida!=null){
+            try {
+                salida.close();
+                if(reader!=null){
+                reader.close();
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(AbsorbenteO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            }
+        };
+    }
 }

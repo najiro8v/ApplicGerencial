@@ -26,9 +26,9 @@ public class Lista_de_Cuentas extends javax.swing.JFrame {
         File archivo=new File(jFileChooser1.getSelectedFile()+".txt");
         try{
             BufferedWriter salida =new BufferedWriter (new FileWriter(archivo));
-            salida.write("Esta es la salida del archivo +");
+            salida.write("Esta es la salida del archivo");
             salida.newLine();
-            salida.append(" nueva linea de text");
+            salida.append("nueva linea de text");
             salida.close();
         }
         catch(Exception e){}
