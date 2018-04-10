@@ -14,7 +14,19 @@ public class AbsorventeO {
                     CostoDeVenta/*Continene el Costo de Venta pero en precio montario*/,
                     InvInicial/*Continene el inventario pero en precio montario*/,
                     InvFinal/*Continene el inventario pero en precio montario*/,
-                    CostoDeArticuloManofacturado,UtilidadBruta,
-                    GastoVariableDeVenta,GastoDeVenta_Y_Administracion;
+                    CostoDeArticuloManofacturado,
+                    UtilidadBruta,
+                    GastoVariableDeVenta,
+                    GastoDeVenta_Y_Administracion,
+                    UtilidadDeOperacion,
+                    PrecioDeVenta,
+                    CostoFijoDeProduccion,
+                    CostoVariableDeProduccion,
+                    CostoFijoDeProduccionUNITARIO,
+                    CostoVariableDeProduccionUNITARIO;
+    
+    private int INVinicialCANT,
+                INVfinalCANT,
+                INVproducidasCANT;
     
 }
