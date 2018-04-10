@@ -5,6 +5,7 @@
  */
 package applicgerencial;
 import GerencialPrin.*;
+
 /**
  *
  * @author Yasser Velasquez
@@ -16,8 +17,9 @@ public class ApplicGerencial {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        gerencialprin nuevo=new gerencialprin();
-        nuevo.setVisible(true);
+      //  gerencialprin nuevo=new gerencialprin();
+        //nuevo.setVisible(true);
+       
     }
     
 }
