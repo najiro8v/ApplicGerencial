@@ -5,10 +5,28 @@
  */
 package Metodos;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author casa
  */
 public class ty {
+    LinkedList<AbsorbenteO> temp=new LinkedList<>();
+    LinkedList temp1=new LinkedList();
+    AbsorbenteO we=new AbsorbenteO(),ew=new AbsorbenteO();
+    public void neww()
+    {
+        temp1.add(we);
+        temp.add(we);
+        temp.add(ew);
+        System.out.println(temp.get(0).get());
+        System.out.println(temp.get(0).shalom());
+        
+    }
+    public static void main(String [] args) 
+    { ty o =new ty();
+        o.neww();
+    }
     
 }

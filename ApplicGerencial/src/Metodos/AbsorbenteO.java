@@ -31,11 +31,15 @@ public class AbsorbenteO implements Serializable  {
                     CostoVariableDeProduccionUNITARIO=0;
     
     private int INVinicialCANT=0,
-                INVfinalCANT=0,
+                INVfinalCANT=120,
                 INVproducidasCANT=0;
     public int get()
     {
         return INVfinalCANT;
+    }
+    public String shalom()
+    {
+        return "is life";
     }
     public static void main(String [] args) 
     {
