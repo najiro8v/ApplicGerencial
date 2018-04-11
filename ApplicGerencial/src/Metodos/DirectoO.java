@@ -27,6 +27,16 @@ public class DirectoO {
     
     private int INVinicialCANT,
                 INVfinalCANT,
-                INVproducidasCANT;
+                INVproducidasCANT,
+                INVenta;
+    
+    public void setVentas(int INVenta,double PrecioDeventa)
+    {   
+        this.INVenta=INVenta;
+        this.PrecioDeVenta=PrecioDeventa;
+        Venta=INVenta*PrecioDeventa; 
+    }
+
     
 }
+
