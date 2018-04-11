@@ -5,6 +5,8 @@
  */
 package Metodos;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author casa
@@ -38,15 +40,30 @@ public class DirectoO {
         Venta=INVenta*PrecioDeventa; 
     }
     public void setINV(int INVinicialCANT,int INVfinalCANT,int  INVproducidasCANT){
-        if(INVfinalCANT+INVenta==INVinicialCANT+INVproducidasCANT||
-                INVfinalCANT==(INVinicialCANT+INVproducidasCANT)-INVenta
-                ||(INVfinalCANT+INVenta)-INVinicialCANT==INVproducidasCANT
-                ||(INVfinalCANT+INVenta)-INVproducidasCANT==INVinicialCANT)
+        if(INVfinalCANT+INVenta==INVinicialCANT+INVproducidasCANT
+                
+                )
         {
             this.INVfinalCANT=INVfinalCANT;
             this.INVinicialCANT=INVinicialCANT;
             this.INVproducidasCANT=INVproducidasCANT;
-        }
+        }else if(INVfinalCANT==(INVinicialCANT+INVproducidasCANT)-INVenta&&INVfinalCANT==0){
+                 
+                    this.INVfinalCANT=(INVinicialCANT+INVproducidasCANT)-INVenta;
+                    this.INVinicialCANT=INVinicialCANT;
+                    this.INVproducidasCANT=INVproducidasCANT;
+                 }else if((INVfinalCANT+INVenta)-INVinicialCANT==INVproducidasCANT&&INVproducidasCANT==0){
+                 
+                              this.INVfinalCANT=INVfinalCANT;
+                              this.INVinicialCANT=INVinicialCANT;
+                              this.INVproducidasCANT=(INVfinalCANT+INVenta)-INVinicialCANT;
+                         }else if((INVfinalCANT+INVenta)-INVproducidasCANT==INVinicialCANT&&INVinicialCANT==0){
+                 
+                                      this.INVfinalCANT=INVfinalCANT;
+                                     this.INVinicialCANT=(INVfinalCANT+INVenta)-INVproducidasCANT;
+                                     this.INVproducidasCANT=INVproducidasCANT;
+                                }else{
+                                            JOptionPane.showMessageDialog(null,"las cuentas de inventario no coinciden segun la Ecuacion","Error En Inventarios", JOptionPane.ERROR_MESSAGE);}
         
         
     }
