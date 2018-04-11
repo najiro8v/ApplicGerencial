@@ -14,6 +14,7 @@ public class DirectoO {
                     CostoDeVenta/*Continene el Costo de Venta pero en precio montario*/,
                     InvInicial/*Continene el inventario pero en precio montario*/,
                     InvFinal/*Continene el inventario pero en precio montario*/,
+                    INVproducidas,
                     CostoDeArticuloManofacturado,
                     UtilidadBruta,
                     GastoVariableDeVenta,
@@ -36,7 +37,23 @@ public class DirectoO {
         this.PrecioDeVenta=PrecioDeventa;
         Venta=INVenta*PrecioDeventa; 
     }
-
+    public void setINV(int INVinicialCANT,int INVfinalCANT,int  INVproducidasCANT){
+        if(INVfinalCANT+INVenta==INVinicialCANT+INVproducidasCANT||
+                INVfinalCANT==(INVinicialCANT+INVproducidasCANT)-INVenta
+                ||(INVfinalCANT+INVenta)-INVinicialCANT==INVproducidasCANT
+                ||(INVfinalCANT+INVenta)-INVproducidasCANT==INVinicialCANT)
+        {
+            this.INVfinalCANT=INVfinalCANT;
+            this.INVinicialCANT=INVinicialCANT;
+            this.INVproducidasCANT=INVproducidasCANT;
+        }
+        
+        
+    }
+    public void setCostoV()
+    {
+        
+    }
     
 }
 
