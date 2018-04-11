@@ -40,9 +40,7 @@ public class DirectoO {
         Venta=INVenta*PrecioDeventa; 
     }
     public void setINV(int INVinicialCANT,int INVfinalCANT,int  INVproducidasCANT){
-        if(INVfinalCANT+INVenta==INVinicialCANT+INVproducidasCANT
-                
-                )
+        if(INVfinalCANT+INVenta==INVinicialCANT+INVproducidasCANT)
         {
             this.INVfinalCANT=INVfinalCANT;
             this.INVinicialCANT=INVinicialCANT;
@@ -69,6 +67,7 @@ public class DirectoO {
     }
     public void setCostoV()
     {
+        
         
     }
     
