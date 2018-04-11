@@ -47,17 +47,17 @@ public class DirectoO {
             this.INVfinalCANT=INVfinalCANT;
             this.INVinicialCANT=INVinicialCANT;
             this.INVproducidasCANT=INVproducidasCANT;
-        }else if(INVfinalCANT==(INVinicialCANT+INVproducidasCANT)-INVenta&&INVfinalCANT==0){
+        }else if(0!=(INVinicialCANT+INVproducidasCANT)-INVenta&&INVfinalCANT==0){
                  
                     this.INVfinalCANT=(INVinicialCANT+INVproducidasCANT)-INVenta;
                     this.INVinicialCANT=INVinicialCANT;
                     this.INVproducidasCANT=INVproducidasCANT;
-                 }else if((INVfinalCANT+INVenta)-INVinicialCANT==INVproducidasCANT&&INVproducidasCANT==0){
+                 }else if((INVfinalCANT+INVenta)-INVinicialCANT!=0&&INVproducidasCANT==0){
                  
                               this.INVfinalCANT=INVfinalCANT;
                               this.INVinicialCANT=INVinicialCANT;
                               this.INVproducidasCANT=(INVfinalCANT+INVenta)-INVinicialCANT;
-                         }else if((INVfinalCANT+INVenta)-INVproducidasCANT==INVinicialCANT&&INVinicialCANT==0){
+                         }else if((INVfinalCANT+INVenta)-INVproducidasCANT!=0&&INVinicialCANT==0){
                  
                                       this.INVfinalCANT=INVfinalCANT;
                                      this.INVinicialCANT=(INVfinalCANT+INVenta)-INVproducidasCANT;
