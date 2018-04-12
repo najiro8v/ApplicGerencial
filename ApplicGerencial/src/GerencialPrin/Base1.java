@@ -10,14 +10,15 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import Metodos.*;
+import javax.swing.JTextField;
 /**
  *
  * @author Yasser Velasquez
  */
 public class Base1 extends javax.swing.JFrame {
 
-CDirecto cdi=new CDirecto();
-CAbsorbente cab=new CAbsorbente();
+/*CDirecto cdi=new CDirecto();
+CAbsorbente cab=new CAbsorbente();*/
 gerencialprin gp;
     /**
      * Creates new form Base1
@@ -172,10 +173,20 @@ gerencialprin gp;
                 jCheckBox2MouseClicked(evt);
             }
         });
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox2ActionPerformed(evt);
+            }
+        });
 
         jCheckBox3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jCheckBox3MouseClicked(evt);
+            }
+        });
+        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox3ActionPerformed(evt);
             }
         });
 
@@ -456,26 +467,27 @@ gerencialprin gp;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRadioButtonMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem2ActionPerformed
-     cab.setVisible(true);
+  //   cab.setVisible(true);
         
     }//GEN-LAST:event_jRadioButtonMenuItem2ActionPerformed
 
     private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
         // TODO add your handling code here:
-        cdi.setVisible(true);
+//        cdi.setVisible(true);
     }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
 
     private void jRadioButtonMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem3ActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        gp=new gerencialprin();
-        gp.setVisible(true);
+        
     }//GEN-LAST:event_jRadioButtonMenuItem3ActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         // TODO add your handling code here:
         this.setVisible(false);
-        CDirectoC nuevo=new CDirectoC();
+        gp=new gerencialprin();
+        gp.setVisible(true);
+       // CDirectoC nuevo=new CDirectoC();
     }//GEN-LAST:event_formWindowClosed
 
     private void PrecioVKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PrecioVKeyTyped
@@ -567,12 +579,15 @@ gerencialprin gp;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        DirectoO nuevo=new DirectoO();
-       int temp=0;
-       double tempP=0;
-       if(UndsV.getText().length()<=0||PrecioV.getText().length()<=0){JOptionPane.showMessageDialog(null, "Tiene datos vacios en la opcion de venta");}
-       else if(UndsV.getText().length()>0||PrecioV.getText().length()>0)
-                {nuevo.setVentas(Integer.parseInt(UndsV.getText()), Double.parseDouble(PrecioV.getText()));
-                    }     
+        if(Vacio(PrecioV)&&Vacio(UndsV)&&Vacio(Inv_I)&&Vacio(Inv_F)&&Vacio(Inv_P))
+       {
+           nuevo.setVentas(Integer.parseInt(UndsV.getText()), Double.parseDouble(PrecioV.getText()));
+           nuevo.setINV(Integer.parseInt(Inv_I.getText()), Integer.parseInt(Inv_F.getText()),Integer.parseInt(Inv_P.getText()));
+       }
+        else{JOptionPane.showMessageDialog(null,"al parecer usted posee un campo de infomacion vacio,\n por favor aquellos que no tiene opcion de estar inactivos(inv inicial,inv Final ),\n se recomienda y se le pide por etica que introduzca el valor 0","Campo de informacion vacio",JOptionPane.INFORMATION_MESSAGE);
+                }
+        
+            
             
            
         
@@ -649,6 +664,24 @@ gerencialprin gp;
             evt.consume();
         }
     }//GEN-LAST:event_Inv_IKeyTyped
+
+    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+        if(jCheckBox3.isSelected())
+        {Inv_I.setText("0");
+        Inv_I.setEnabled(false);}
+        else{
+        Inv_I.setEnabled(true);
+        }
+    }//GEN-LAST:event_jCheckBox3ActionPerformed
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+       if(jCheckBox2.isSelected())
+        {Inv_F.setText("0");
+        Inv_F.setEnabled(false);}
+        else{
+        Inv_F.setEnabled(true);
+        }
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -731,4 +764,12 @@ gerencialprin gp;
     private javax.swing.JSeparator jSeparator3;
     public static javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
+    public boolean Vacio(JTextField prueba){
+            if(prueba.getText().length()<=0){
+                return false;
+            }
+            else {
+                return true;
+            }
+    }
 }

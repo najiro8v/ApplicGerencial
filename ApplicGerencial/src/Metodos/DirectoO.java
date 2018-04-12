@@ -62,30 +62,37 @@ public class DirectoO {
         System.out.println(Venta);
     }
     public void setINV(int INVinicialCANT,int INVfinalCANT,int  INVproducidasCANT){
-        if(INVfinalCANT+INVenta==INVinicialCANT+INVproducidasCANT)
-        {
+        System.out.println("Inventario incial"+INVinicialCANT+"\ninventario final :"+INVfinalCANT+"\n inventario producido en el "+INVproducidasCANT);
+        System.out.println("inventario de ventas"+INVenta);
+        if(INVfinalCANT+this.INVenta==INVinicialCANT+INVproducidasCANT)
+        {   System.out.println("INVfinalCANT+this.INVenta==INVinicialCANT+INVproducidasCANT este if se ejecutop");
             this.INVfinalCANT=INVfinalCANT;
             this.INVinicialCANT=INVinicialCANT;
             this.INVproducidasCANT=INVproducidasCANT;
-        }else if(0!=(INVinicialCANT+INVproducidasCANT)-INVenta&&INVfinalCANT==0){
-                 
-                    this.INVfinalCANT=(INVinicialCANT+INVproducidasCANT)-INVenta;
+        }else if(((INVinicialCANT+INVproducidasCANT)-this.INVenta)!=0&&INVfinalCANT==0){
+                 System.out.println("((INVinicialCANT+INVproducidasCANT)-this.INVenta)!=0 este if se ejecuto");
+                if((INVinicialCANT+INVproducidasCANT)-this.INVenta<0)
+                     
+                    {       this.INVfinalCANT=-1*((INVinicialCANT+INVproducidasCANT)-INVenta)  ;  }
+                 else{ INVfinalCANT=(INVinicialCANT+INVproducidasCANT)-INVenta;}
                     this.INVinicialCANT=INVinicialCANT;
                     this.INVproducidasCANT=INVproducidasCANT;
-                 }else if((INVfinalCANT+INVenta)-INVinicialCANT!=0&&INVproducidasCANT==0){
-                 
+                 }else if((INVfinalCANT+this.INVenta)-INVinicialCANT!=0&&INVproducidasCANT==0){
+                            System.out.println("(INVfinalCANT+this.INVenta)-INVinicialCANT este if se ejecuto");
                               this.INVfinalCANT=INVfinalCANT;
                               this.INVinicialCANT=INVinicialCANT;
-                              this.INVproducidasCANT=(INVfinalCANT+INVenta)-INVinicialCANT;
+                              this.INVproducidasCANT=(INVfinalCANT+this.INVenta)-INVinicialCANT;
                          }else if((INVfinalCANT+INVenta)-INVproducidasCANT!=0&&INVinicialCANT==0){
-                 
+                                    System.out.println("(INVfinalCANT+INVenta)-INVproducidasCANT!=0 este if se ejecuto");
                                       this.INVfinalCANT=INVfinalCANT;
                                      this.INVinicialCANT=(INVfinalCANT+INVenta)-INVproducidasCANT;
                                      this.INVproducidasCANT=INVproducidasCANT;
                                 }else{
                                             JOptionPane.showMessageDialog(null,"las cuentas de inventario no coinciden segun la Ecuacion","Error En Inventarios", JOptionPane.ERROR_MESSAGE);}
-        
-        
+        System.out.println("--------------------------------------------------------------------");
+        System.out.println((INVinicialCANT+INVproducidasCANT)-INVenta);
+        System.out.println("Inventario incial: "+INVinicialCANT+"\ninventario final :"+INVfinalCANT+"\n inventario producido en el "+INVproducidasCANT);
+        System.out.println("inventario de ventas"+INVenta);
     }
     public void setCostoV()
     {
