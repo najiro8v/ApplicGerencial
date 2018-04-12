@@ -5,6 +5,7 @@
  */
 package Metodos;
 
+import GerencialPrin.Base1;
 import javax.swing.JOptionPane;
 
 /**
@@ -61,32 +62,32 @@ public class DirectoO {
         Venta=INVenta*PrecioDeventa; 
         System.out.println(Venta);
     }
-    public void setINV(int INVinicialCANT,int INVfinalCANT,int  INVproducidasCANT){
-        System.out.println("Inventario incial"+INVinicialCANT+"\ninventario final :"+INVfinalCANT+"\n inventario producido en el "+INVproducidasCANT);
+    public void setINV(int INVinicialCANT1,int INVfinalCANT1,int  INVproducidasCANT1){
+        System.out.println("Inventario incial"+INVinicialCANT1+"\ninventario final :"+INVfinalCANT1+"\n inventario producido en el "+INVproducidasCANT1);
         System.out.println("inventario de ventas"+INVenta);
-        if(INVfinalCANT+this.INVenta==INVinicialCANT+INVproducidasCANT)
+        if(INVfinalCANT1+this.INVenta==INVinicialCANT1+INVproducidasCANT1)
         {   System.out.println("INVfinalCANT+this.INVenta==INVinicialCANT+INVproducidasCANT este if se ejecutop");
-            this.INVfinalCANT=INVfinalCANT;
-            this.INVinicialCANT=INVinicialCANT;
-            this.INVproducidasCANT=INVproducidasCANT;
-        }else if(((INVinicialCANT+INVproducidasCANT)-this.INVenta)!=0&&INVfinalCANT==0){
+            this.INVfinalCANT=INVfinalCANT1;
+            this.INVinicialCANT=INVinicialCANT1;
+            this.INVproducidasCANT=INVproducidasCANT1;
+        }else if(((INVinicialCANT1+INVproducidasCANT1)-this.INVenta)!=0&&INVfinalCANT1==0){
                  System.out.println("((INVinicialCANT+INVproducidasCANT)-this.INVenta)!=0 este if se ejecuto");
-                if((INVinicialCANT+INVproducidasCANT)-this.INVenta<0)
+                if((INVinicialCANT1+INVproducidasCANT1)-this.INVenta<0)
                      
-                    {       this.INVfinalCANT=-1*((INVinicialCANT+INVproducidasCANT)-INVenta)  ;  }
-                 else{ INVfinalCANT=(INVinicialCANT+INVproducidasCANT)-INVenta;}
-                    this.INVinicialCANT=INVinicialCANT;
-                    this.INVproducidasCANT=INVproducidasCANT;
-                 }else if((INVfinalCANT+this.INVenta)-INVinicialCANT!=0&&INVproducidasCANT==0){
+                    {       this.INVfinalCANT=-1*((INVinicialCANT1+INVproducidasCANT1)-this.INVenta);  }
+                 else{ INVfinalCANT=(INVinicialCANT1+INVproducidasCANT1)-INVenta;} Base1.Inv_F.setText(String.valueOf(this.INVfinalCANT));
+                    this.INVinicialCANT=INVinicialCANT1;
+                    this.INVproducidasCANT=INVproducidasCANT1;
+                 }else if((INVfinalCANT1+this.INVenta)-INVinicialCANT1!=0&&INVproducidasCANT1==0){
                             System.out.println("(INVfinalCANT+this.INVenta)-INVinicialCANT este if se ejecuto");
-                              this.INVfinalCANT=INVfinalCANT;
-                              this.INVinicialCANT=INVinicialCANT;
-                              this.INVproducidasCANT=(INVfinalCANT+this.INVenta)-INVinicialCANT;
-                         }else if((INVfinalCANT+INVenta)-INVproducidasCANT!=0&&INVinicialCANT==0){
+                              this.INVfinalCANT=INVfinalCANT1;
+                              this.INVinicialCANT=INVinicialCANT1;
+                              this.INVproducidasCANT=(INVfinalCANT1+this.INVenta)-INVinicialCANT1;Base1.Inv_P.setText(String.valueOf(this.INVproducidasCANT));
+                         }else if((INVfinalCANT1+INVenta)-INVproducidasCANT1!=0&&INVinicialCANT1==0){
                                     System.out.println("(INVfinalCANT+INVenta)-INVproducidasCANT!=0 este if se ejecuto");
-                                      this.INVfinalCANT=INVfinalCANT;
-                                     this.INVinicialCANT=(INVfinalCANT+INVenta)-INVproducidasCANT;
-                                     this.INVproducidasCANT=INVproducidasCANT;
+                                      this.INVfinalCANT=INVfinalCANT1;
+                                     this.INVinicialCANT=(INVfinalCANT1+INVenta)-INVproducidasCANT1;Base1.Inv_I.setText(String.valueOf(this.INVinicialCANT));
+                                     this.INVproducidasCANT=INVproducidasCANT1;
                                 }else{
                                             JOptionPane.showMessageDialog(null,"las cuentas de inventario no coinciden segun la Ecuacion","Error En Inventarios", JOptionPane.ERROR_MESSAGE);}
         System.out.println("--------------------------------------------------------------------");
