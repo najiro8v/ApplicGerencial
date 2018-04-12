@@ -561,12 +561,14 @@ gerencialprin gp;
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
-         Cost_F_P.setEnabled(false);
+        
+        Cost_F_P.setEnabled(false);
         Cost_F_P_u.setEnabled(true);
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
         // TODO add your handling code here:
+        
         Costo_V_P.setEnabled(true);
         Cost_V_P_u.setEnabled(false);
     }//GEN-LAST:event_jRadioButton4ActionPerformed
