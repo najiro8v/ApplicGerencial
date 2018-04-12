@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import Metodos.*;
 /**
  *
  * @author Yasser Velasquez
@@ -565,10 +566,20 @@ gerencialprin gp;
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        CDirectoC h=new CDirectoC();
-        CAbsorebenteC cab=new CAbsorebenteC();
-        String temp=String.valueOf(h.VentasN());
-        Total_V.setText(temp);
+       DirectoO nuevo=new DirectoO();
+       int temp=0;
+       double tempP=0;
+       if(UndsV.getText().length()<=0||PrecioV.getText().length()<=0){JOptionPane.showMessageDialog(null, "Tiene datos vacios en la opcion de venta");}
+       else if(UndsV.getText().length()>0||PrecioV.getText().length()>0)
+                {nuevo.setVentas(Integer.parseInt(UndsV.getText()), Double.parseDouble(PrecioV.getText()));
+                    }     
+            
+           
+        
+       // CDirectoC h=new CDirectoC();
+      //  CAbsorebenteC cab=new CAbsorebenteC();
+        //String temp=String.valueOf(h.VentasN());
+        //Total_V.setText(temp);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed

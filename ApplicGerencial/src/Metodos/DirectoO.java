@@ -33,11 +33,33 @@ public class DirectoO {
                 INVproducidasCANT,
                 INVenta;
     
+    public DirectoO(){
+    Venta/*Continene la Venta pero en precio montario*/=0;
+                    CostoDeVenta/*Continene el Costo de Venta pero en precio montario*/=0;
+                    InvInicial/*Continene el inventario pero en precio montario*/=0;
+                    InvFinal/*Continene el inventario pero en precio montario*/=0;
+                    INVproducidas=0;
+                    CostoDeArticuloManofacturado=0;
+                    UtilidadBruta=0;
+                    GastoVariableDeVenta=0;
+                    GastoDeVenta_Y_Administracion=0;
+                    UtilidadDeOperacion=0;
+                    PrecioDeVenta=0;
+                    CostoFijoDeProduccion=0;
+                    CostoVariableDeProduccion=0;
+                    CostoFijoDeProduccionUNITARIO=0;
+                    CostoVariableDeProduccionUNITARIO=0;
+                    INVinicialCANT=0;
+                INVfinalCANT=0;
+                INVproducidasCANT=0;
+                INVenta=0;
+    }
     public void setVentas(int INVenta,double PrecioDeventa)
     {   
         this.INVenta=INVenta;
         this.PrecioDeVenta=PrecioDeventa;
         Venta=INVenta*PrecioDeventa; 
+        System.out.println(Venta);
     }
     public void setINV(int INVinicialCANT,int INVfinalCANT,int  INVproducidasCANT){
         if(INVfinalCANT+INVenta==INVinicialCANT+INVproducidasCANT)
