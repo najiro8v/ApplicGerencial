@@ -37,7 +37,8 @@ public class AbsorbenteO implements Serializable  {
                     CostoVariableDeProduccionUNITARIO,
                     GastosDeFinancieros,
                      OtrosGastos,
-                    OtrosProductos;
+                    OtrosProductos,
+                    GastosDeOperaciones;
     
     private int INVinicialCANT,
                 INVfinalCANT,
@@ -70,6 +71,7 @@ public class AbsorbenteO implements Serializable  {
                 GastosDeFinancieros=0;
                 OtrosGastos=0;
                 OtrosProductos=0;
+                GastosDeOperaciones=0;
     }
     public void setVentas(int INVenta,double PrecioDeventa)
     {   
@@ -124,9 +126,9 @@ public class AbsorbenteO implements Serializable  {
     }
     public void setCostodeVVariable()
     {
-        InvInicial=(INVinicialCANT*CostoVariableDeProduccionUNITARIO)+(CostoVariableDeProduccion);
-        InvFinal=(INVfinalCANT*CostoVariableDeProduccion)+(CostoVariableDeProduccionUNITARIO)/*Continene el inventario pero en precio montario*/;
-        INVproducidas=(INVproducidasCANT*CostoVariableDeProduccion)+(CostoVariableDeProduccionUNITARIO);
+        InvInicial=(INVinicialCANT*(CostoVariableDeProduccionUNITARIO+(CostoFijoDeProduccion/INVinicialCANT)+CostoFijoDeProduccionUNITARIO))+(CostoVariableDeProduccion);
+        InvFinal=(INVfinalCANT*(CostoVariableDeProduccionUNITARIO+(CostoFijoDeProduccion/INVfinalCANT)+CostoFijoDeProduccionUNITARIO))+(CostoVariableDeProduccionUNITARIO)/*Continene el inventario pero en precio montario*/;
+        INVproducidas=(INVproducidasCANT*(CostoVariableDeProduccionUNITARIO+(CostoFijoDeProduccion/INVproducidasCANT)+CostoFijoDeProduccionUNITARIO))+(CostoVariableDeProduccionUNITARIO);
         System.out.println("InvInicial= "+InvInicial);
         System.out.println("InvFinal= "+InvFinal);
         System.out.println("INVproducidas= "+INVproducidas);
@@ -134,18 +136,18 @@ public class AbsorbenteO implements Serializable  {
         System.out.println("CostoDeVenta= "+CostoDeVenta);
     }
    
-    public void setCostodeVFijo()
+   /* public void setCostodeVFijo()
     {
         
         InvInicialF=INVinicialCANT*(CostoFijoDeProduccionUNITARIO+(CostoFijoDeProduccion/INVinicialCANT));
-        InvFinalF=INVfinalCANT*(CostoFijoDeProduccionUNITARIO+(CostoFijoDeProduccion/INVfinalCANT))/*Continene el inventario pero en precio montario*/;
-        INVproducidasF=INVproducidasCANT*(CostoFijoDeProduccionUNITARIO+(CostoFijoDeProduccion/INVproducidasCANT));
+        InvFinalF=INVfinalCANT*(CostoFijoDeProduccionUNITARIO+(CostoFijoDeProduccion/INVfinalCANT))/*Continene el inventario pero en precio montario*//*;
+       /* INVproducidasF=INVproducidasCANT*(CostoFijoDeProduccionUNITARIO+(CostoFijoDeProduccion/INVproducidasCANT));
         System.out.println("InvInicial= "+InvInicialF);
         System.out.println("InvFinal= "+InvFinalF);
         System.out.println("INVproducidas= "+INVproducidasF);
         
         
-    }
+    }*/
     
     public void setGastos(double GastosDeFinancieros1,double GastoVariableDeVenta1,double GastoDeVenta_Y_Administracion1,double OtrosGastos1,double OtrosProductos1)
     {
@@ -154,6 +156,8 @@ public class AbsorbenteO implements Serializable  {
                 OtrosProductos=OtrosProductos1;
                 GastoVariableDeVenta=GastoVariableDeVenta1;
                 GastoDeVenta_Y_Administracion= GastoDeVenta_Y_Administracion1;
+                GastosDeOperaciones= GastoDeVenta_Y_Administracion+GastosDeFinancieros+GastoVariableDeVenta+OtrosGastos-OtrosProductos;
+                
         
     }
     /*************************Metodos Ge
@@ -199,6 +203,8 @@ public class AbsorbenteO implements Serializable  {
     public double getOtrosGastos(){return OtrosGastos;}
     
     public double getOtrosProductos(){return OtrosProductos;}
+    
+    public double getGastosDeOperaciones(){return GastosDeOperaciones;}
    /* public static void main(String [] args) 
     {
         File archivo=new File("m.txt");
