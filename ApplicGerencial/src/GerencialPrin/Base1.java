@@ -74,7 +74,7 @@ gerencialprin gp;
         jCheckBox3 = new javax.swing.JCheckBox();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        gastos_de_Administracion = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
         Cost_F_P = new javax.swing.JTextField();
@@ -90,13 +90,13 @@ gerencialprin gp;
         jRadioButton4 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        gasto_v_de_venta = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        Gastos_financieros = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        Otros_gastos = new javax.swing.JTextField();
+        Otros_productos = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -207,14 +207,14 @@ gerencialprin gp;
 
         jLabel11.setText("Gastos de Ventas y Administracion");
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        gastos_de_Administracion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                gastos_de_AdministracionActionPerformed(evt);
             }
         });
-        jTextField5.addKeyListener(new java.awt.event.KeyAdapter() {
+        gastos_de_Administracion.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                jTextField5KeyTyped(evt);
+                gastos_de_AdministracionKeyTyped(evt);
             }
         });
 
@@ -278,7 +278,7 @@ gerencialprin gp;
             }
         });
 
-        jButton1.setText("Ingresar");
+        jButton1.setText("Verificar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -287,9 +287,33 @@ gerencialprin gp;
 
         jLabel13.setText("Gasto Variable de Venta");
 
+        gasto_v_de_venta.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                gasto_v_de_ventaKeyTyped(evt);
+            }
+        });
+
         jLabel14.setText("Gastos Financieros");
 
+        Gastos_financieros.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Gastos_financierosKeyTyped(evt);
+            }
+        });
+
         jLabel15.setText("Otros Gastos");
+
+        Otros_gastos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Otros_gastosKeyTyped(evt);
+            }
+        });
+
+        Otros_productos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Otros_productosKeyTyped(evt);
+            }
+        });
 
         jLabel16.setText("Otros Productos");
 
@@ -376,7 +400,7 @@ gerencialprin gp;
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel16)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Otros_productos, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel11)
@@ -387,12 +411,12 @@ gerencialprin gp;
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                                            .addComponent(jTextField1)
-                                            .addComponent(jTextField2)))
+                                            .addComponent(gastos_de_Administracion, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                            .addComponent(gasto_v_de_venta)
+                                            .addComponent(Gastos_financieros)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(19, 19, 19)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(Otros_gastos, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -453,25 +477,25 @@ gerencialprin gp;
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(gasto_v_de_venta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(gastos_de_Administracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Gastos_financieros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Otros_gastos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Otros_productos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel16))
                 .addGap(65, 65, 65))
         );
@@ -479,7 +503,7 @@ gerencialprin gp;
         jScrollPane1.setViewportView(jPanel1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(0, 0, 100, 100);
+        jScrollPane1.setBounds(0, 0, 862, 722);
         getContentPane().add(Fondo);
         Fondo.setBounds(0, 0, 0, 0);
 
@@ -652,7 +676,9 @@ gerencialprin gp;
        DirectoO nuevo=new DirectoO();
         
         
-        if(Vacio(PrecioV)&&Vacio(UndsV)&&Vacio(Inv_I)&&Vacio(Inv_F)&&Vacio(Inv_P)&&Vacio(Cost_F_P)&&Vacio(Cost_F_P_u)&&Vacio(Costo_V_P)&&Vacio(Cost_V_P_u))
+        if(Vacio(PrecioV)&&Vacio(UndsV)&&Vacio(Inv_I)
+         &&Vacio(Inv_F)&&Vacio(Inv_P)&&Vacio(Cost_F_P)
+         &&Vacio(Cost_F_P_u)&&Vacio(Costo_V_P)&&Vacio(Cost_V_P_u))
        {
            nuevo.setVentas(Integer.parseInt(UndsV.getText()), Double.parseDouble(PrecioV.getText()));
            nuevo.setINV(Integer.parseInt(Inv_I.getText()), Integer.parseInt(Inv_F.getText()),Integer.parseInt(Inv_P.getText()));
@@ -675,9 +701,9 @@ gerencialprin gp;
         //Total_V.setText(temp);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void gastos_de_AdministracionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gastos_de_AdministracionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_gastos_de_AdministracionActionPerformed
 
     private void Costo_V_PKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Costo_V_PKeyTyped
         // TODO add your handling code here:
@@ -716,14 +742,14 @@ gerencialprin gp;
         }
     }//GEN-LAST:event_Cost_V_P_uKeyTyped
 
-    private void jTextField5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyTyped
+    private void gastos_de_AdministracionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_gastos_de_AdministracionKeyTyped
         // TODO add your handling code here:
          char cuentita=evt.getKeyChar();
         if(cuentita!=','&&(cuentita<'0'||cuentita>'9'))
         {
             evt.consume();
         }
-    }//GEN-LAST:event_jTextField5KeyTyped
+    }//GEN-LAST:event_gastos_de_AdministracionKeyTyped
 
     private void Inv_FKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Inv_FKeyTyped
         // TODO add your handling code here:
@@ -760,6 +786,38 @@ gerencialprin gp;
         Inv_F.setEnabled(true);
         }
     }//GEN-LAST:event_jCheckBox2ActionPerformed
+
+    private void gasto_v_de_ventaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_gasto_v_de_ventaKeyTyped
+        char cuentita=evt.getKeyChar();
+        if(cuentita!=','&&(cuentita<'0'||cuentita>'9'))
+        {
+            evt.consume();
+        }
+    }//GEN-LAST:event_gasto_v_de_ventaKeyTyped
+
+    private void Gastos_financierosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Gastos_financierosKeyTyped
+        char cuentita=evt.getKeyChar();
+        if(cuentita!=','&&(cuentita<'0'||cuentita>'9'))
+        {
+            evt.consume();
+        }
+    }//GEN-LAST:event_Gastos_financierosKeyTyped
+
+    private void Otros_gastosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Otros_gastosKeyTyped
+        char cuentita=evt.getKeyChar();
+        if(cuentita!=','&&(cuentita<'0'||cuentita>'9'))
+        {
+            evt.consume();
+        }
+    }//GEN-LAST:event_Otros_gastosKeyTyped
+
+    private void Otros_productosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Otros_productosKeyTyped
+       char cuentita=evt.getKeyChar();
+        if(cuentita!=','&&(cuentita<'0'||cuentita>'9'))
+        {
+            evt.consume();
+        }
+    }//GEN-LAST:event_Otros_productosKeyTyped
 
     /**
      * @param args the command line arguments
@@ -804,14 +862,19 @@ gerencialprin gp;
     public static javax.swing.JTextField Costo_V_P;
     private javax.swing.JRadioButtonMenuItem Directo;
     private javax.swing.JLabel Fondo;
+    private javax.swing.JTextField Gastos_financieros;
     public static javax.swing.JTextField Inv_F;
     public static javax.swing.JTextField Inv_I;
     public static javax.swing.JTextField Inv_P;
+    private javax.swing.JTextField Otros_gastos;
+    private javax.swing.JTextField Otros_productos;
     public static javax.swing.JTextField PrecioV;
     public static javax.swing.JTextField Total_V;
     public static javax.swing.JTextField UndsV;
     public static javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JTextField gasto_v_de_venta;
+    public static javax.swing.JTextField gastos_de_Administracion;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
@@ -846,11 +909,6 @@ gerencialprin gp;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    public static javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
     public boolean Vacio(JTextField prueba){
             if(prueba.getText().length()<=0){

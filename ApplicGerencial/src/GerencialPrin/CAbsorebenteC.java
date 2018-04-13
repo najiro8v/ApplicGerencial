@@ -182,28 +182,28 @@ public double Costo_venta()
 return Costo_Ventas=VentasN()-CAM();
 }
 public double GO()
-{if((Base1.Cost_F_P.getText().length()!=0&&Base1.jTextField5.getText().length()!=0))
-    {double tempGas=Double.parseDouble(Base1.jTextField5.getText()),
+{if((Base1.Cost_F_P.getText().length()!=0&&Base1.gastos_de_Administracion.getText().length()!=0))
+    {double tempGas=Double.parseDouble(Base1.gastos_de_Administracion.getText()),
         tempCostP=Double.parseDouble(Base1.Cost_F_P.getText())
             ,tempInv_P=Double.parseDouble(Base1.Inv_P.getText());
     return Inventario_I=(tempCostP/tempInv_P)*tempGas;
     
-    }if( (Base1.Cost_F_P_u.getText().length()!=0&&Base1.jTextField5.getText().length()!=0))
+    }if( (Base1.Cost_F_P_u.getText().length()!=0&&Base1.gastos_de_Administracion.getText().length()!=0))
     {
-        double tempGas=Double.parseDouble(Base1.jTextField5.getText()),
+        double tempGas=Double.parseDouble(Base1.gastos_de_Administracion.getText()),
         tempCostP=Double.parseDouble(Base1.Cost_F_P_u.getText())
             ,tempInv_P=Double.parseDouble(Base1.Inv_P.getText());
     return Inventario_I=(tempCostP)*tempGas;
     }
-    if(Base1.Cost_V_P_u.getText().length()!=0&&Base1.jTextField5.getText().length()!=0)
+    if(Base1.Cost_V_P_u.getText().length()!=0&&Base1.gastos_de_Administracion.getText().length()!=0)
     {
-        double tempGas=Double.parseDouble(Base1.jTextField5.getText()),
+        double tempGas=Double.parseDouble(Base1.gastos_de_Administracion.getText()),
         tempCostP=Double.parseDouble(Base1.Cost_V_P_u.getText())
             ,tempInv_P=Double.parseDouble(Base1.Inv_P.getText());
     return Inventario_I=(tempCostP)*tempGas;
     }
-    if(Base1.Costo_V_P.getText().length()!=0&&Base1.jTextField5.getText().length()!=0)
-    {double tempGas=Double.parseDouble(Base1.jTextField5.getText()),
+    if(Base1.Costo_V_P.getText().length()!=0&&Base1.gastos_de_Administracion.getText().length()!=0)
+    {double tempGas=Double.parseDouble(Base1.gastos_de_Administracion.getText()),
         tempCostP=Double.parseDouble(Base1.Costo_V_P.getText())
             ,tempInv_P=Double.parseDouble(Base1.Inv_P.getText());
     return Inventario_I=(tempCostP/tempInv_P)*tempGas;
