@@ -22,16 +22,16 @@ public class CDirectoC {
             ,Costo_Ventas;
     CDirecto nuevo;
     public CDirectoC()
-    {CDirecto.jTextField1.setText(String.valueOf(VentasN()));
-     CDirecto.jTextField3.setText(String.valueOf(Inv_I()+Inv_I_Fijo()+Inv_Iu()+Inv_I_Fijo_u()));
-     CDirecto.jTextField4.setText(String.valueOf(
+    {CDirecto.Ventas.setText(String.valueOf(VentasN()));
+     CDirecto.Costo_Varaible_de_Inv_Inicial.setText(String.valueOf(Inv_I()+Inv_I_Fijo()+Inv_Iu()+Inv_I_Fijo_u()));
+     CDirecto.Costo_Varaible_de_Inv_Produccion.setText(String.valueOf(
                                   Inv_P_F_u()/*titulo mal escrito, costo de produccion variable*/+Inv_Pu()));
-     CDirecto.jTextField5.setText(String.valueOf(Inv_F()+Inv_F_Fijo()+Inv_F_Fijo_u()+Inv_Fu()));
-     CDirecto.jTextField6.setText(String.valueOf(CAM1()));
-     CDirecto.jTextField2.setText(String.valueOf(CAM()));
-     CDirecto.jTextField7.setText(String.valueOf(Inv_P_Fijo_u()+Inv_P_Fijo()));
-     CDirecto.jTextField10.setText(String.valueOf(UN()));
-     CDirecto.jTextField9.setText(String.valueOf(Inv_P_Fijo_u()+Inv_P_Fijo()));
+     CDirecto.Costo_Varaible_de_Inv_Final.setText(String.valueOf(Inv_F()+Inv_F_Fijo()+Inv_F_Fijo_u()+Inv_Fu()));
+     CDirecto.Costo_Variable.setText(String.valueOf(CAM1()));
+     CDirecto.Margen_De_Contribucion.setText(String.valueOf(CAM()));
+     CDirecto.Costo_Fijo_de_Inv_Inicial.setText(String.valueOf(Inv_P_Fijo_u()+Inv_P_Fijo()));
+     CDirecto.Costo_Fijo_de_Inv_Final.setText(String.valueOf(UN()));
+     CDirecto.Costo_Fijo_de_Inv_Produccion.setText(String.valueOf(Inv_P_Fijo_u()+Inv_P_Fijo()));
      
      
     }

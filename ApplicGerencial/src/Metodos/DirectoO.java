@@ -7,7 +7,7 @@ package Metodos;
 
 import GerencialPrin.Base1;
 import javax.swing.JOptionPane;
-
+import GerencialPrin.CDirecto;
 /**
  *
  * @author casa
@@ -139,11 +139,27 @@ public class DirectoO {
         System.out.println("InvInicial= "+InvInicialF);
         System.out.println("InvFinal= "+InvFinalF);
         System.out.println("INVproducidas= "+INVproducidasF);
-        
+        CostoDeArticuloManofacturado=((InvInicialF+INVproducidasF)-InvFinalF);
         
     }
-    
-    public void setGastos(double GastosDeFinancieros1,double GastoVariableDeVenta1,double GastoDeVenta_Y_Administracion1,double OtrosGastos1,double OtrosProductos1)
+    public void setUtilidad()
+    {
+        UtilidadBruta=CostoDeVenta-CostoDeArticuloManofacturado;
+    }
+    public void CDirectoO()
+    {
+        CDirecto.Ventas.setText(String.valueOf(Venta));
+        CDirecto.Costo_Varaible_de_Inv_Inicial.setText(String.valueOf(InvInicial));
+        CDirecto.Costo_Varaible_de_Inv_Produccion.setText(String.valueOf(INVproducidas));
+        CDirecto.Costo_Varaible_de_Inv_Final.setText(String.valueOf(InvFinal));
+        CDirecto.Costo_Variable.setText(String.valueOf(CostoDeVenta+Venta));
+        CDirecto.Margen_De_Contribucion.setText(String.valueOf(CostoDeVenta));
+        CDirecto.Costo_Fijo_de_Inv_Inicial.setText(String.valueOf(InvInicialF));
+        CDirecto.Costo_Fijo_de_Inv_Produccion.setText(String.valueOf(INVproducidasF));
+        CDirecto.Costo_Fijo_de_Inv_Inicial.setText(String.valueOf(InvFinalF));
+        
+    }
+  /*  public void setGastos(double GastosDeFinancieros1,double GastoVariableDeVenta1,double GastoDeVenta_Y_Administracion1,double OtrosGastos1,double OtrosProductos1)
     {
                 GastosDeFinancieros=GastosDeFinancieros1;
                 OtrosGastos=OtrosGastos1;
@@ -151,7 +167,7 @@ public class DirectoO {
                 GastoVariableDeVenta=GastoVariableDeVenta1;
                 GastoDeVenta_Y_Administracion= GastoDeVenta_Y_Administracion1;
         
-    }
+    }*/
     /*************************Metodos Ge
      * @return t***********************************************/
     public double getVenta(){return Venta;}
