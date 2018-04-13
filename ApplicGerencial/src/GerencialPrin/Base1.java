@@ -33,10 +33,11 @@ gerencialprin gp;
     public Base1() {
         
         initComponents();
-        String [] temp={"0","0","0","0","0","0"};
+        String [] temp={"0","0","0","0","0","0","0"};
         modelo.addColumn("ITO");
         modelo.addColumn("CTO");
         modelo.addColumn("CVT");
+        modelo.addColumn("CFT");
         modelo.addColumn("Q");
         modelo.addColumn("CVU");
         modelo.addColumn("PVU");
@@ -129,6 +130,7 @@ gerencialprin gp;
         jButton6 = new javax.swing.JButton();
         set_CFT = new javax.swing.JTextField();
         jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -603,6 +605,8 @@ gerencialprin gp;
             }
         });
 
+        jButton8.setText("Calcular");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -627,7 +631,10 @@ gerencialprin gp;
                             .addComponent(set_PVU)
                             .addComponent(Add_row)
                             .addComponent(set_row)
-                            .addComponent(set_CVU))))
+                            .addComponent(set_CVU)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jButton8)))))
                 .addGap(44, 44, 44))
         );
         jPanel2Layout.setVerticalGroup(
@@ -659,7 +666,9 @@ gerencialprin gp;
                         .addGap(51, 51, 51)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(set_CFT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton7))))
+                            .addComponent(jButton7))
+                        .addGap(101, 101, 101)
+                        .addComponent(jButton8)))
                 .addContainerGap(152, Short.MAX_VALUE))
         );
 
@@ -1014,7 +1023,7 @@ gerencialprin gp;
     }//GEN-LAST:event_Otros_productosKeyTyped
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       String [] temp={"0","0","0","0","0","0"};
+       String [] temp={"0","0","0","0","0","0","0"};
         modelo.addRow(temp);
         jTable1.setModel(modelo);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -1022,12 +1031,13 @@ gerencialprin gp;
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        if(Vacio(Add_row)){int i=Integer.parseInt(Add_row.getText());
         for(int n=0;n<i;n++){
-        String [] temp={"0","0","0","0","0","0"};
+        String [] temp={"0","0","0","0","0","0","0"};
         modelo.addRow(temp);
         }
         jTable1.setModel(modelo);}
        else{JOptionPane.showMessageDialog(null,"No tiene datos para definir el tamaño de 'n' ","Campo de informacion vacio",JOptionPane.INFORMATION_MESSAGE);
                 }
+       Add_row.setText("");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -1047,12 +1057,13 @@ gerencialprin gp;
     }
         
         for(int n=0;n<i;n++){
-        String [] temp={"0","0","0","0","0","0"};
+        String [] temp={"0","0","0","0","0","0","0"};
         modelo.addRow(temp);
         }
         jTable1.setModel(modelo);}
        else{JOptionPane.showMessageDialog(null,"No tiene datos para definir el tamaño de 'n' ","Campo de informacion vacio",JOptionPane.INFORMATION_MESSAGE);
                 }
+       set_row.setText("");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void set_rowKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_set_rowKeyTyped
@@ -1073,23 +1084,38 @@ gerencialprin gp;
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         if(Vacio(set_CVU)){
+            int temp=Integer.parseInt(set_CVU.getText());
+            for(int i=0;i<modelo.getRowCount();i++){
+            modelo.setValueAt(temp,i,5);
+            }
         }
         else{JOptionPane.showMessageDialog(null,"No tiene datos para definir el tamaño de 'n' ","Campo de informacion vacio",JOptionPane.INFORMATION_MESSAGE);
                 }
+        set_CVU.setText("");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
        if(Vacio(set_PVU)){
+           int temp=Integer.parseInt(set_PVU.getText());
+            for(int i=0;i<modelo.getRowCount();i++){
+            modelo.setValueAt(temp,i,6);
+            }
         }
         else{JOptionPane.showMessageDialog(null,"No tiene datos para definir el tamaño de 'n' ","Campo de informacion vacio",JOptionPane.INFORMATION_MESSAGE);
                 }
+       set_PVU.setText("");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
        if(Vacio(set_CFT)){
+           int temp=Integer.parseInt(set_CFT.getText());
+            for(int i=0;i<modelo.getRowCount();i++){
+            modelo.setValueAt(temp,i,3);
+            }
         }
         else{JOptionPane.showMessageDialog(null,"No tiene datos para definir el tamaño de 'n' ","Campo de informacion vacio",JOptionPane.INFORMATION_MESSAGE);
                 }
+       set_CFT.setText("");
     }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
@@ -1157,6 +1183,7 @@ gerencialprin gp;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JLabel jLabel1;

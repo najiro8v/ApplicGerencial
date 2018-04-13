@@ -16,6 +16,7 @@ public class Grafica extends javax.swing.JDialog {
      */
     public Grafica(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        
         initComponents();
     }
 
@@ -28,21 +29,44 @@ public class Grafica extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jXGraph1 = new org.jdesktop.swingx.JXGraph();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jXGraph1.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                jXGraph1ComponentResized(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jXGraph1Layout = new javax.swing.GroupLayout(jXGraph1);
+        jXGraph1.setLayout(jXGraph1Layout);
+        jXGraph1Layout.setHorizontalGroup(
+            jXGraph1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jXGraph1Layout.setVerticalGroup(
+            jXGraph1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jXGraph1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jXGraph1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jXGraph1ComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jXGraph1ComponentResized
+      jXGraph1.setSize(this.getSize());
+    }//GEN-LAST:event_jXGraph1ComponentResized
 
     /**
      * @param args the command line arguments
@@ -87,5 +111,6 @@ public class Grafica extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private org.jdesktop.swingx.JXGraph jXGraph1;
     // End of variables declaration//GEN-END:variables
 }
