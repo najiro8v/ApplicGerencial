@@ -18,6 +18,9 @@ public class DirectoO {
                     InvInicial/*Continene el inventario pero en precio montario*/,
                     InvFinal/*Continene el inventario pero en precio montario*/,
                     INVproducidas,
+                    InvInicialF/*Continene el inventario pero en precio montario*/,
+                    InvFinalF/*Continene el inventario pero en precio montario*/,
+                    INVproducidasF,
                     CostoDeArticuloManofacturado,
                     UtilidadBruta,
                     GastoVariableDeVenta,
@@ -54,6 +57,9 @@ public class DirectoO {
                 INVfinalCANT=0;
                 INVproducidasCANT=0;
                 INVenta=0;
+                InvInicialF=0/*Continene el inventario pero en precio montario*/;
+                InvFinalF/*Continene el inventario pero en precio montario*/=0;
+                INVproducidasF=0;
     }
     public void setVentas(int INVenta,double PrecioDeventa)
     {   
@@ -106,7 +112,7 @@ public class DirectoO {
           System.out.println("CostoFijoDeProduccionUNITARIO= "+CostoFijoDeProduccionUNITARIO);
            System.out.println("CostoVariableDeProduccionUNITARIO= "+CostoVariableDeProduccionUNITARIO);
     }
-    public void setCostoVVariable()
+    public void setCostodeVVariable()
     {
         InvInicial=(INVinicialCANT*CostoVariableDeProduccionUNITARIO)+(CostoVariableDeProduccion);
         InvFinal=(INVfinalCANT*CostoVariableDeProduccion)+(CostoVariableDeProduccionUNITARIO)/*Continene el inventario pero en precio montario*/;
@@ -114,7 +120,21 @@ public class DirectoO {
         System.out.println("InvInicial= "+InvInicial);
         System.out.println("InvFinal= "+InvFinal);
         System.out.println("INVproducidas= "+INVproducidas);
+        CostoDeVenta=((InvInicial+INVproducidas)-InvFinal)-Venta;
+        System.out.println("CostoDeVenta= "+CostoDeVenta);
     }
-    
+   
+    public void setCostodeVFijo()
+    {
+        
+        InvInicialF=INVinicialCANT*(CostoFijoDeProduccionUNITARIO+(CostoFijoDeProduccion/INVinicialCANT));
+        InvFinalF=INVfinalCANT*(CostoFijoDeProduccionUNITARIO+(CostoFijoDeProduccion/INVfinalCANT))/*Continene el inventario pero en precio montario*/;
+        INVproducidasF=INVproducidasCANT*(CostoFijoDeProduccionUNITARIO+(CostoFijoDeProduccion/INVproducidasCANT));
+        System.out.println("InvInicial= "+InvInicialF);
+        System.out.println("InvFinal= "+InvFinalF);
+        System.out.println("INVproducidas= "+INVproducidasF);
+        
+        
+    }
 }
 
