@@ -134,19 +134,19 @@ public class DirectoO {
    
     public void setCostodeVFijo()
     {
-        if(CostoFijoDeProduccion==0&&INVinicialCANT==0)
+        if(INVinicialCANT==0)
         {InvInicialF=INVinicialCANT*(CostoFijoDeProduccionUNITARIO);}
         else{InvInicialF=INVinicialCANT*(CostoFijoDeProduccionUNITARIO+(CostoFijoDeProduccion/INVinicialCANT));}
         
-        if(CostoFijoDeProduccion==0&&INVfinalCANT==0)
+        if(INVfinalCANT==0)
         {InvFinalF=INVfinalCANT*(CostoFijoDeProduccionUNITARIO)/*Continene el inventario pero en precio montario*/;}
         else{InvFinalF=INVfinalCANT*(CostoFijoDeProduccionUNITARIO+(CostoFijoDeProduccion/INVfinalCANT))/*Continene el inventario pero en precio montario*/;}
-        if(CostoFijoDeProduccion==0&&INVproducidasCANT==0){
+        if(INVproducidasCANT==0){
         INVproducidasF=INVproducidasCANT*(CostoFijoDeProduccionUNITARIO);}
         else{INVproducidasF=INVproducidasCANT*(CostoFijoDeProduccionUNITARIO+(CostoFijoDeProduccion/INVproducidasCANT));}
-        System.out.println("InvInicial= "+InvInicialF);
-        System.out.println("InvFinal= "+InvFinalF);
-        System.out.println("INVproducidas= "+INVproducidasF);
+     //   System.out.println("InvInicial= "+InvInicialF);
+     //   System.out.println("InvFinal= "+InvFinalF);
+      //  System.out.println("INVproducidas= "+INVproducidasF);
         CostoDeArticuloManofacturado=((InvInicialF+INVproducidasF)-InvFinalF);
         
     }
@@ -162,7 +162,7 @@ public class DirectoO {
         CDirecto.Costo_Varaible_de_Inv_Produccion.setText(String.valueOf(INVproducidas));
         CDirecto.Costo_Varaible_de_Inv_Final.setText(String.valueOf(InvFinal));
        
-        System.out.println("-------------"+InvFinal+"------------------");
+      //  System.out.println("-------------"+InvFinal+"------------------");
         CDirecto.Costo_Variable.setText(String.valueOf(CostoDeVenta));
         CDirecto.Margen_De_Contribucion.setText(String.valueOf(CostodeContribucion));
         CDirecto.Costo_Fijo_de_Inv_Inicial.setText(String.valueOf(InvInicialF));

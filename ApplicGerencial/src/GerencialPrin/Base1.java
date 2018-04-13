@@ -22,7 +22,7 @@ import javax.swing.JTextField;
  */
 public class Base1 extends javax.swing.JFrame {
 DefaultTableModel modelo=new DefaultTableModel();
-    DirectoO nuevo=new DirectoO();
+DirectoO nuevo=new DirectoO();
 AbsorbenteO nuevo1=new AbsorbenteO();
 /*CDirecto cdi=new CDirecto();
 CAbsorbente cab=new CAbsorbente();*/
@@ -50,6 +50,7 @@ gerencialprin gp;
         Fondo.setIcon(MYimage("gerencial2.png",this.getSize().width,this.getSize().height));
         Fondo.setSize(this.getSize());
         Directo.setEnabled(false);
+        MetodoAbsorbente.setEnabled(false);
     }
     
     ImageIcon MYimage(String nombre,int wt ,int ht){
@@ -135,7 +136,7 @@ gerencialprin gp;
         jMenu2 = new javax.swing.JMenu();
         Directo = new javax.swing.JRadioButtonMenuItem();
         Absorbente = new javax.swing.JMenu();
-        jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
+        MetodoAbsorbente = new javax.swing.JRadioButtonMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
 
@@ -697,14 +698,14 @@ gerencialprin gp;
 
         Absorbente.setText("C. Absorbente");
 
-        jRadioButtonMenuItem2.setSelected(true);
-        jRadioButtonMenuItem2.setText("Metodo Absorbente o Natural");
-        jRadioButtonMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        MetodoAbsorbente.setSelected(true);
+        MetodoAbsorbente.setText("Metodo Absorbente o Natural");
+        MetodoAbsorbente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonMenuItem2ActionPerformed(evt);
+                MetodoAbsorbenteActionPerformed(evt);
             }
         });
-        Absorbente.add(jRadioButtonMenuItem2);
+        Absorbente.add(MetodoAbsorbente);
 
         jMenuBar1.add(Absorbente);
 
@@ -720,10 +721,10 @@ gerencialprin gp;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButtonMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem2ActionPerformed
+    private void MetodoAbsorbenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MetodoAbsorbenteActionPerformed
   //   cab.setVisible(true);
-        
-    }//GEN-LAST:event_jRadioButtonMenuItem2ActionPerformed
+        nuevo1.setAbsorbenteC1();
+    }//GEN-LAST:event_MetodoAbsorbenteActionPerformed
 
     private void DirectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DirectoActionPerformed
         nuevo.CDirectoO();
@@ -878,6 +879,8 @@ gerencialprin gp;
                            Double.parseDouble(Otros_productos.getText()));
           /***********************************************/
            Directo.setEnabled(true);
+           MetodoAbsorbente.setEnabled(true);
+           
        }
         else{JOptionPane.showMessageDialog(null,"al parecer usted posee un campo de infomacion vacio,\n por favor aquellos que no tiene opcion de estar inactivos(inv inicial,inv Final ),\n se recomienda y se le pide por etica que introduzca el valor 0","Campo de informacion vacio",JOptionPane.INFORMATION_MESSAGE);
                 }
@@ -1137,6 +1140,7 @@ gerencialprin gp;
     public static javax.swing.JTextField Inv_F;
     public static javax.swing.JTextField Inv_I;
     public static javax.swing.JTextField Inv_P;
+    private javax.swing.JRadioButtonMenuItem MetodoAbsorbente;
     private javax.swing.JTextField Otros_gastos;
     private javax.swing.JTextField Otros_productos;
     public static javax.swing.JTextField PrecioV;
@@ -1182,7 +1186,6 @@ gerencialprin gp;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

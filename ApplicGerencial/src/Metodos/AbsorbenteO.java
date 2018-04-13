@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import GerencialPrin.CAbsorbente;
+import GerencialPrin.CDirecto;
 /**
  *
  * @author casa
@@ -82,15 +84,15 @@ public class AbsorbenteO implements Serializable  {
         System.out.println(Venta);
     }
     public void setINV(int INVinicialCANT1,int INVfinalCANT1,int  INVproducidasCANT1){
-        System.out.println("Inventario incial"+INVinicialCANT1+"\ninventario final :"+INVfinalCANT1+"\n inventario producido en el "+INVproducidasCANT1);
-        System.out.println("inventario de ventas"+INVenta);
+      //  System.out.println("Inventario incial"+INVinicialCANT1+"\ninventario final :"+INVfinalCANT1+"\n inventario producido en el "+INVproducidasCANT1);
+      //  System.out.println("inventario de ventas"+INVenta);
         if(INVfinalCANT1+this.INVenta==INVinicialCANT1+INVproducidasCANT1)
-        {   System.out.println("INVfinalCANT+this.INVenta==INVinicialCANT+INVproducidasCANT este if se ejecutop");
+        {  // System.out.println("INVfinalCANT+this.INVenta==INVinicialCANT+INVproducidasCANT este if se ejecutop");
             this.INVfinalCANT=INVfinalCANT1;
             this.INVinicialCANT=INVinicialCANT1;
             this.INVproducidasCANT=INVproducidasCANT1;
         }else if(((INVinicialCANT1+INVproducidasCANT1)-this.INVenta)!=0&&INVfinalCANT1==0){
-                 System.out.println("((INVinicialCANT+INVproducidasCANT)-this.INVenta)!=0 este if se ejecuto");
+                 //System.out.println("((INVinicialCANT+INVproducidasCANT)-this.INVenta)!=0 este if se ejecuto");
                 if((INVinicialCANT1+INVproducidasCANT1)-this.INVenta<0)
                      
                     {       this.INVfinalCANT=-1*((INVinicialCANT1+INVproducidasCANT1)-this.INVenta);  }
@@ -98,21 +100,21 @@ public class AbsorbenteO implements Serializable  {
                     this.INVinicialCANT=INVinicialCANT1;
                     this.INVproducidasCANT=INVproducidasCANT1;
                  }else if((INVfinalCANT1+this.INVenta)-INVinicialCANT1!=0&&INVproducidasCANT1==0){
-                            System.out.println("(INVfinalCANT+this.INVenta)-INVinicialCANT este if se ejecuto");
+                           // System.out.println("(INVfinalCANT+this.INVenta)-INVinicialCANT este if se ejecuto");
                               this.INVfinalCANT=INVfinalCANT1;
                               this.INVinicialCANT=INVinicialCANT1;
                               this.INVproducidasCANT=(INVfinalCANT1+this.INVenta)-INVinicialCANT1;Base1.Inv_P.setText(String.valueOf(this.INVproducidasCANT));
                          }else if((INVfinalCANT1+INVenta)-INVproducidasCANT1!=0&&INVinicialCANT1==0){
-                                    System.out.println("(INVfinalCANT+INVenta)-INVproducidasCANT!=0 este if se ejecuto");
+                                  //  System.out.println("(INVfinalCANT+INVenta)-INVproducidasCANT!=0 este if se ejecuto");
                                       this.INVfinalCANT=INVfinalCANT1;
                                      this.INVinicialCANT=(INVfinalCANT1+INVenta)-INVproducidasCANT1;Base1.Inv_I.setText(String.valueOf(this.INVinicialCANT));
                                      this.INVproducidasCANT=INVproducidasCANT1;
                                 }else{
                                             JOptionPane.showMessageDialog(null,"las cuentas de inventario no coinciden segun la Ecuacion","Error En Inventarios", JOptionPane.ERROR_MESSAGE);}
-        System.out.println("--------------------------------------------------------------------");
-        System.out.println((INVinicialCANT+INVproducidasCANT)-INVenta);
-        System.out.println("Inventario incial: "+INVinicialCANT+"\ninventario final :"+INVfinalCANT+"\n inventario producido en el "+INVproducidasCANT);
-        System.out.println("inventario de ventas"+INVenta);
+      //  System.out.println("--------------------------------------------------------------------");
+       // System.out.println((INVinicialCANT+INVproducidasCANT)-INVenta);
+        //System.out.println("Inventario incial: "+INVinicialCANT+"\ninventario final :"+INVfinalCANT+"\n inventario producido en el "+INVproducidasCANT);
+       // System.out.println("inventario de ventas"+INVenta);
     }
     public void setCOSTOS(double CostoFijoDeProduccion1,double CostoVariableDeProduccion1,double CostoFijoDeProduccionUNITARIO1,double CostoVariableDeProduccionUNITARIO1)
     {
@@ -126,13 +128,13 @@ public class AbsorbenteO implements Serializable  {
            System.out.println("CostoVariableDeProduccionUNITARIO= "+CostoVariableDeProduccionUNITARIO);
     }
     public void setCostodeVVariable()
-    {   if(CostoFijoDeProduccion==0&&INVinicialCANT==0){
+    { if(INVinicialCANT==0){
         InvInicial=(INVinicialCANT*(CostoVariableDeProduccionUNITARIO+CostoFijoDeProduccionUNITARIO))+(CostoVariableDeProduccion);}
     else{ InvInicial=(INVinicialCANT*(CostoVariableDeProduccionUNITARIO+(CostoFijoDeProduccion/INVinicialCANT)+CostoFijoDeProduccionUNITARIO))+(CostoVariableDeProduccion);}
-    if(CostoFijoDeProduccion==0&&INVfinalCANT==0){   
+    if(INVfinalCANT==0){   
     InvFinal=(INVfinalCANT*(CostoVariableDeProduccionUNITARIO+CostoFijoDeProduccionUNITARIO))+(CostoVariableDeProduccionUNITARIO);}
     else{InvFinal=(INVfinalCANT*(CostoVariableDeProduccionUNITARIO+(CostoFijoDeProduccion/INVfinalCANT)+CostoFijoDeProduccionUNITARIO))+(CostoVariableDeProduccionUNITARIO)/*Continene el inventario pero en precio montario*/;}
-    if(CostoFijoDeProduccion==0&&INVproducidasCANT==0){
+    if(INVproducidasCANT==0){
         INVproducidas=(INVproducidasCANT*(CostoVariableDeProduccionUNITARIO+CostoFijoDeProduccionUNITARIO))+(CostoVariableDeProduccionUNITARIO);
     }    
     else{INVproducidas=(INVproducidasCANT*(CostoVariableDeProduccionUNITARIO+(CostoFijoDeProduccion/INVproducidasCANT)+CostoFijoDeProduccionUNITARIO))+(CostoVariableDeProduccionUNITARIO);}
@@ -142,6 +144,14 @@ public class AbsorbenteO implements Serializable  {
         CostoDeVenta=(InvInicial+INVproducidas)-InvFinal;
         CostodeContribucion=Venta-((InvInicial+INVproducidas)-InvFinal);
         System.out.println("CostoDeVenta= "+CostoDeVenta);
+    }
+    public void setUtilidad()
+    {   
+         UtilidadBruta=CostodeContribucion-GastosDeOperaciones;
+    }
+     public double setUtilidadN()
+    {   
+         return (UtilidadBruta+OtrosProductos)-OtrosGastos;
     }
    
    /* public void setCostodeVFijo()
@@ -162,10 +172,33 @@ public class AbsorbenteO implements Serializable  {
                 GastosDeFinancieros=GastosDeFinancieros1;
                 OtrosGastos=OtrosGastos1;
                 OtrosProductos=OtrosProductos1;
-                GastoVariableDeVenta=GastoVariableDeVenta1;
+                GastoVariableDeVenta=GastoVariableDeVenta1*INVenta;
                 GastoDeVenta_Y_Administracion= GastoDeVenta_Y_Administracion1;
                 GastosDeOperaciones= GastoDeVenta_Y_Administracion+GastosDeFinancieros+GastoVariableDeVenta+OtrosGastos-OtrosProductos;
                 
+        
+    }
+    
+    
+    public void setAbsorbenteC1()
+    {   CAbsorbente nuevo=new CAbsorbente();
+        setUtilidad();
+        CAbsorbente.Ventas.setText(String.valueOf(Venta));
+        CAbsorbente.INV_inicial.setText(String.valueOf(InvInicial));
+        CAbsorbente.INV_produccion.setText(String.valueOf(INVproducidas));
+        CAbsorbente.INV_final.setText(String.valueOf(InvFinal));
+        CAbsorbente.costoDeVenta.setText(String.valueOf(CostoDeVenta));
+        CAbsorbente.UtilidadBruta.setText(String.valueOf(CostodeContribucion));
+        CAbsorbente.GastoVariableDeVenta.setText(String.valueOf(GastoVariableDeVenta));
+        CAbsorbente.GastoDeAdministracion.setText(String.valueOf(GastoDeVenta_Y_Administracion));
+        CAbsorbente.GastosFinancieros.setText(String.valueOf(GastosDeFinancieros));
+        CAbsorbente.GastosdeOperacion.setText(String.valueOf(GastosDeOperaciones));
+        CAbsorbente.Uti_de_operacion.setText(String.valueOf(UtilidadBruta));
+        CAbsorbente.otrosProductos.setText(String.valueOf(OtrosProductos));
+        CAbsorbente.otrosGastos.setText(String.valueOf(OtrosGastos));
+        CAbsorbente.UTI_NETA.setText(String.valueOf(setUtilidadN()));
+        
+        
         
     }
     /*************************Metodos Ge

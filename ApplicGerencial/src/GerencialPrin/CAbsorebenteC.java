@@ -22,16 +22,16 @@ public class CAbsorebenteC {
             ,Costo_Ventas;
     CAbsorbente nuevo;
     public CAbsorebenteC()
-    {CAbsorbente.jTextField1.setText(String.valueOf(VentasN()));
-     CAbsorbente.jTextField2.setText(String.valueOf(Inv_I()+Inv_I_Fijo()+Inv_Iu()+Inv_I_Fijo_u()));
-     CAbsorbente.jTextField3.setText(String.valueOf(
+    {CAbsorbente.Ventas.setText(String.valueOf(VentasN()));
+     CAbsorbente.INV_inicial.setText(String.valueOf(Inv_I()+Inv_I_Fijo()+Inv_Iu()+Inv_I_Fijo_u()));
+     CAbsorbente.INV_produccion.setText(String.valueOf(
                                   Inv_P_F_u()/*titulo mal escrito, costo de produccion variable*/+Inv_Pu()));
-     CAbsorbente.jTextField4.setText(String.valueOf(Inv_F()+Inv_F_Fijo()+Inv_F_Fijo_u()+Inv_Fu()));
-     CAbsorbente.jTextField5.setText(String.valueOf(CAM1()));
-    CAbsorbente.jTextField6.setText(String.valueOf(CAM()));
-     CAbsorbente.jTextField8.setText(String.valueOf(GO()));
-     CAbsorbente.jTextField10.setText(String.valueOf(UN()));
-     CAbsorbente.jTextField9.setText(String.valueOf(GO()));
+     CAbsorbente.INV_final.setText(String.valueOf(Inv_F()+Inv_F_Fijo()+Inv_F_Fijo_u()+Inv_Fu()));
+     CAbsorbente.costoDeVenta.setText(String.valueOf(CAM1()));
+    CAbsorbente.UtilidadBruta.setText(String.valueOf(CAM()));
+     CAbsorbente.GastoDeAdministracion.setText(String.valueOf(GO()));
+     CAbsorbente.Uti_de_operacion.setText(String.valueOf(UN()));
+     CAbsorbente.GastosFinancieros.setText(String.valueOf(GO()));
      nuevo=new CAbsorbente();
      
      
