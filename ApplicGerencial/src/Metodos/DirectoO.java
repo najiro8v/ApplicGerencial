@@ -30,7 +30,10 @@ public class DirectoO {
                     CostoFijoDeProduccion,
                     CostoVariableDeProduccion,
                     CostoFijoDeProduccionUNITARIO,
-                    CostoVariableDeProduccionUNITARIO;
+                    CostoVariableDeProduccionUNITARIO,
+                    GastosDeFinancieros,
+                     OtrosGastos,
+                    OtrosProductos;
     
     private int INVinicialCANT,
                 INVfinalCANT,
@@ -60,6 +63,9 @@ public class DirectoO {
                 InvInicialF=0/*Continene el inventario pero en precio montario*/;
                 InvFinalF/*Continene el inventario pero en precio montario*/=0;
                 INVproducidasF=0;
+                GastosDeFinancieros=0;
+                OtrosGastos=0;
+                OtrosProductos=0;
     }
     public void setVentas(int INVenta,double PrecioDeventa)
     {   
@@ -136,5 +142,58 @@ public class DirectoO {
         
         
     }
+    
+    public void setGastos(double GastosDeFinancieros1,double GastoVariableDeVenta1,double GastoDeVenta_Y_Administracion1,double OtrosGastos1,double OtrosProductos1)
+    {
+                GastosDeFinancieros=GastosDeFinancieros1;
+                OtrosGastos=OtrosGastos1;
+                OtrosProductos=OtrosProductos1;
+                GastoVariableDeVenta=GastoVariableDeVenta1;
+                GastoDeVenta_Y_Administracion= GastoDeVenta_Y_Administracion1;
+        
+    }
+    /*************************Metodos Get***********************************************/
+    public double getVenta(){return Venta;}
+    
+    public double getCostoDeVenta(){return CostoDeVenta;}
+    
+    public double getInvInicial(){return InvInicial;}
+    
+    public double getInvFinal(){return InvFinal;}
+    
+    public double getINVproducidas(){return INVproducidas;}
+    
+    public double getInvInicialF(){return InvInicialF;}
+    
+    public double getInvFinalF(){return InvFinalF;}
+    
+    public double getINVproducidasF(){return INVproducidasF;}
+    
+    public double getCostoDeArticuloManofacturado(){return CostoDeArticuloManofacturado;}
+    
+    public double getUtilidadBruta(){return UtilidadBruta;}
+    
+    public double getGastoVariableDeVenta(){return GastoVariableDeVenta;}
+    
+    public double getGastoDeVenta_Y_Administracion(){return GastoDeVenta_Y_Administracion;}
+    
+    public double getUtilidadDeOperacion(){return UtilidadDeOperacion;}
+    
+    public double getPrecioDeVenta(){return PrecioDeVenta;}
+    
+    public double getCostoFijoDeProduccion(){return CostoFijoDeProduccion;}
+    
+    public double getCostoVariableDeProduccion(){return CostoVariableDeProduccion;}
+    
+    public double getCostoFijoDeProduccionUNITARIO(){return CostoFijoDeProduccionUNITARIO;}
+    
+    public double getCostoVariableDeProduccionUNITARIO(){return CostoVariableDeProduccionUNITARIO;}
+    
+    public double getGastosDeFinancieros(){return GastosDeFinancieros;}
+    
+                    
+    public double getOtrosGastos(){return OtrosGastos;}
+    
+    public double getOtrosProductos(){return OtrosProductos;}
 }
 

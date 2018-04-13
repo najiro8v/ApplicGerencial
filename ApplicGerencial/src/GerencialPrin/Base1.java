@@ -678,14 +678,23 @@ gerencialprin gp;
         
         if(Vacio(PrecioV)&&Vacio(UndsV)&&Vacio(Inv_I)
          &&Vacio(Inv_F)&&Vacio(Inv_P)&&Vacio(Cost_F_P)
-         &&Vacio(Cost_F_P_u)&&Vacio(Costo_V_P)&&Vacio(Cost_V_P_u))
+         &&Vacio(Cost_F_P_u)&&Vacio(Costo_V_P)&&Vacio(Cost_V_P_u)
+         &&Vacio(gasto_v_de_venta)&&Vacio(gastos_de_Administracion)&&Vacio(Gastos_financieros)
+         &&Vacio(Otros_gastos)&&Vacio(Otros_productos))
        {
            nuevo.setVentas(Integer.parseInt(UndsV.getText()), Double.parseDouble(PrecioV.getText()));
+           
            nuevo.setINV(Integer.parseInt(Inv_I.getText()), Integer.parseInt(Inv_F.getText()),Integer.parseInt(Inv_P.getText()));
+           
            nuevo.setCOSTOS(Double.parseDouble(Cost_F_P.getText()),Double.parseDouble(Costo_V_P.getText())
                    ,Double.parseDouble(Cost_F_P_u.getText()),Double.parseDouble(Cost_V_P_u.getText()));
+           
            nuevo.setCostodeVVariable();
+           
            nuevo.setCostodeVFijo();
+           nuevo.setGastos(Double.parseDouble(Gastos_financieros.getText()), Double.parseDouble(gasto_v_de_venta.getText()),
+                           Double.parseDouble(gastos_de_Administracion.getText()),Double.parseDouble(Otros_gastos.getText()),
+                           Double.parseDouble(Otros_productos.getText()));
            Directo.setEnabled(true);
        }
         else{JOptionPane.showMessageDialog(null,"al parecer usted posee un campo de infomacion vacio,\n por favor aquellos que no tiene opcion de estar inactivos(inv inicial,inv Final ),\n se recomienda y se le pide por etica que introduzca el valor 0","Campo de informacion vacio",JOptionPane.INFORMATION_MESSAGE);
