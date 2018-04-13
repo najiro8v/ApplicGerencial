@@ -558,7 +558,7 @@ gerencialprin gp;
     }//GEN-LAST:event_jRadioButtonMenuItem2ActionPerformed
 
     private void DirectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DirectoActionPerformed
-        
+        nuevo.CDirectoO();
        // cdi.setVisible(true);
     }//GEN-LAST:event_DirectoActionPerformed
 

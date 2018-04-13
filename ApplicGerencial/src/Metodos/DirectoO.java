@@ -157,6 +157,8 @@ public class DirectoO {
         CDirecto.Costo_Fijo_de_Inv_Inicial.setText(String.valueOf(InvInicialF));
         CDirecto.Costo_Fijo_de_Inv_Produccion.setText(String.valueOf(INVproducidasF));
         CDirecto.Costo_Fijo_de_Inv_Inicial.setText(String.valueOf(InvFinalF));
+        CDirecto.Costo_Fijo.setText(String.valueOf(CostoDeArticuloManofacturado));
+        CDirecto.Utilidad_Neta.setText(String.valueOf(UtilidadBruta));
         
     }
   /*  public void setGastos(double GastosDeFinancieros1,double GastoVariableDeVenta1,double GastoDeVenta_Y_Administracion1,double OtrosGastos1,double OtrosProductos1)
