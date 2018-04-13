@@ -12,7 +12,7 @@ import java.util.LinkedList;
  * @author casa
  */
 public class ty {
-    LinkedList<AbsorbenteO> temp=new LinkedList<>();
+/*    LinkedList<AbsorbenteO> temp=new LinkedList<>();
     LinkedList temp1=new LinkedList();
     AbsorbenteO we=new AbsorbenteO(),ew=new AbsorbenteO();
     public void neww()
@@ -28,5 +28,5 @@ public class ty {
     { ty o =new ty();
         o.neww();
     }
-    
+  */  
 }
