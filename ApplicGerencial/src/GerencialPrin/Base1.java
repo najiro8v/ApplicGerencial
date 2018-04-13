@@ -10,6 +10,9 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import Metodos.*;
+import java.util.Enumeration;
+import javax.swing.ButtonGroup;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 /**
  *
@@ -30,6 +33,7 @@ gerencialprin gp;
         jPanel1.setSize(this.getSize());
         Fondo.setIcon(MYimage("gerencial2.png",this.getSize().width,this.getSize().height));
         Fondo.setSize(this.getSize());
+        Directo.setEnabled(false);
     }
     
     ImageIcon MYimage(String nombre,int wt ,int ht){
@@ -88,8 +92,8 @@ gerencialprin gp;
         jMenu1 = new javax.swing.JMenu();
         jRadioButtonMenuItem3 = new javax.swing.JRadioButtonMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        Directo = new javax.swing.JRadioButtonMenuItem();
+        Absorbente = new javax.swing.JMenu();
         jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -437,18 +441,18 @@ gerencialprin gp;
 
         jMenu2.setText("C. Directo");
 
-        jRadioButtonMenuItem1.setSelected(true);
-        jRadioButtonMenuItem1.setText("Metodo Directo o Variable");
-        jRadioButtonMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        Directo.setSelected(true);
+        Directo.setText("Metodo Directo o Variable");
+        Directo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonMenuItem1ActionPerformed(evt);
+                DirectoActionPerformed(evt);
             }
         });
-        jMenu2.add(jRadioButtonMenuItem1);
+        jMenu2.add(Directo);
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("C. Absorbente");
+        Absorbente.setText("C. Absorbente");
 
         jRadioButtonMenuItem2.setSelected(true);
         jRadioButtonMenuItem2.setText("Metodo Absorbente o Natural");
@@ -457,9 +461,9 @@ gerencialprin gp;
                 jRadioButtonMenuItem2ActionPerformed(evt);
             }
         });
-        jMenu3.add(jRadioButtonMenuItem2);
+        Absorbente.add(jRadioButtonMenuItem2);
 
-        jMenuBar1.add(jMenu3);
+        jMenuBar1.add(Absorbente);
 
         setJMenuBar(jMenuBar1);
 
@@ -471,10 +475,10 @@ gerencialprin gp;
         
     }//GEN-LAST:event_jRadioButtonMenuItem2ActionPerformed
 
-    private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
+    private void DirectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DirectoActionPerformed
         // TODO add your handling code here:
 //        cdi.setVisible(true);
-    }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
+    }//GEN-LAST:event_DirectoActionPerformed
 
     private void jRadioButtonMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem3ActionPerformed
         // TODO add your handling code here:
@@ -557,6 +561,7 @@ gerencialprin gp;
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
         Cost_F_P.setEnabled(true);
         Cost_F_P_u.setEnabled(false);
+        Cost_F_P_u.setText("0");
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
@@ -564,6 +569,7 @@ gerencialprin gp;
         
         Cost_F_P.setEnabled(false);
         Cost_F_P_u.setEnabled(true);
+        Cost_F_P.setText("0");
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
@@ -571,20 +577,29 @@ gerencialprin gp;
         
         Costo_V_P.setEnabled(true);
         Cost_V_P_u.setEnabled(false);
+        Cost_V_P_u.setText("0");
     }//GEN-LAST:event_jRadioButton4ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
         Costo_V_P.setEnabled(false);
         Cost_V_P_u.setEnabled(true);
+        Costo_V_P.setText("0");
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        DirectoO nuevo=new DirectoO();
-        if(Vacio(PrecioV)&&Vacio(UndsV)&&Vacio(Inv_I)&&Vacio(Inv_F)&&Vacio(Inv_P))
+        
+        
+        if(Vacio(PrecioV)&&Vacio(UndsV)&&Vacio(Inv_I)&&Vacio(Inv_F)&&Vacio(Inv_P)&&Vacio(Cost_F_P)&&Vacio(Cost_F_P_u)&&Vacio(Costo_V_P)&&Vacio(Cost_V_P_u))
        {
            nuevo.setVentas(Integer.parseInt(UndsV.getText()), Double.parseDouble(PrecioV.getText()));
            nuevo.setINV(Integer.parseInt(Inv_I.getText()), Integer.parseInt(Inv_F.getText()),Integer.parseInt(Inv_P.getText()));
+           nuevo.setCOSTOS(Double.parseDouble(Cost_F_P.getText()),Double.parseDouble(Costo_V_P.getText())
+                   ,Double.parseDouble(Cost_F_P_u.getText()),Double.parseDouble(Cost_V_P_u.getText()));
+           nuevo.setCostoVVariable();
+           
+           Directo.setEnabled(true);
        }
         else{JOptionPane.showMessageDialog(null,"al parecer usted posee un campo de infomacion vacio,\n por favor aquellos que no tiene opcion de estar inactivos(inv inicial,inv Final ),\n se recomienda y se le pide por etica que introduzca el valor 0","Campo de informacion vacio",JOptionPane.INFORMATION_MESSAGE);
                 }
@@ -721,10 +736,12 @@ gerencialprin gp;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Absorbente;
     public static javax.swing.JTextField Cost_F_P;
     public static javax.swing.JTextField Cost_F_P_u;
     public static javax.swing.JTextField Cost_V_P_u;
     public static javax.swing.JTextField Costo_V_P;
+    private javax.swing.JRadioButtonMenuItem Directo;
     private javax.swing.JLabel Fondo;
     public static javax.swing.JTextField Inv_F;
     public static javax.swing.JTextField Inv_I;
@@ -732,7 +749,7 @@ gerencialprin gp;
     public static javax.swing.JTextField PrecioV;
     public static javax.swing.JTextField Total_V;
     public static javax.swing.JTextField UndsV;
-    private javax.swing.ButtonGroup buttonGroup1;
+    public static javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox2;
@@ -751,14 +768,12 @@ gerencialprin gp;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem3;
     private javax.swing.JSeparator jSeparator1;
@@ -774,4 +789,26 @@ gerencialprin gp;
                 return true;
             }
     }
+    public boolean Vacio1(JRadioButton prueba){
+            if(prueba.getText().length()<=0){
+                return false;
+            }
+            else {
+                return true;
+            }
+    }
+    public static JRadioButton getSelection(ButtonGroup group) 
+{
+        for (Enumeration e=group.getElements(); e.hasMoreElements(); ) 
+        {
+            JRadioButton b = (JRadioButton)e.nextElement();
+            if (b.getModel() == group.getSelection()) 
+            {
+                return b;
+            }
+        }
+
+        return null;
+}
+
 }

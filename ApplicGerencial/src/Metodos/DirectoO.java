@@ -95,10 +95,25 @@ public class DirectoO {
         System.out.println("Inventario incial: "+INVinicialCANT+"\ninventario final :"+INVfinalCANT+"\n inventario producido en el "+INVproducidasCANT);
         System.out.println("inventario de ventas"+INVenta);
     }
-    public void setCostoV()
+    public void setCOSTOS(double CostoFijoDeProduccion1,double CostoVariableDeProduccion1,double CostoFijoDeProduccionUNITARIO1,double CostoVariableDeProduccionUNITARIO1)
     {
-        
-        
+        CostoFijoDeProduccion=CostoFijoDeProduccion1;
+        CostoVariableDeProduccion=CostoVariableDeProduccion1;
+        CostoFijoDeProduccionUNITARIO=CostoFijoDeProduccionUNITARIO1;
+        CostoVariableDeProduccionUNITARIO=CostoVariableDeProduccionUNITARIO1;
+        System.out.println("CostoFijoDeProduccion= "+CostoFijoDeProduccion);
+         System.out.println("CostoVariableDeProduccion= "+CostoVariableDeProduccion);
+          System.out.println("CostoFijoDeProduccionUNITARIO= "+CostoFijoDeProduccionUNITARIO);
+           System.out.println("CostoVariableDeProduccionUNITARIO= "+CostoVariableDeProduccionUNITARIO);
+    }
+    public void setCostoVVariable()
+    {
+        InvInicial=(INVinicialCANT*CostoVariableDeProduccionUNITARIO)+(CostoVariableDeProduccion);
+        InvFinal=(INVfinalCANT*CostoVariableDeProduccion)+(CostoVariableDeProduccionUNITARIO)/*Continene el inventario pero en precio montario*/;
+        INVproducidas=(INVproducidasCANT*CostoVariableDeProduccion)+(CostoVariableDeProduccionUNITARIO);
+        System.out.println("InvInicial= "+InvInicial);
+        System.out.println("InvFinal= "+InvFinal);
+        System.out.println("INVproducidas= "+INVproducidas);
     }
     
 }
