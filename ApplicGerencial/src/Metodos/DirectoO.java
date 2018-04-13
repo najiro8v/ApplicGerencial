@@ -152,7 +152,8 @@ public class DirectoO {
                 GastoDeVenta_Y_Administracion= GastoDeVenta_Y_Administracion1;
         
     }
-    /*************************Metodos Get***********************************************/
+    /*************************Metodos Ge
+     * @return t***********************************************/
     public double getVenta(){return Venta;}
     
     public double getCostoDeVenta(){return CostoDeVenta;}
@@ -190,7 +191,6 @@ public class DirectoO {
     public double getCostoVariableDeProduccionUNITARIO(){return CostoVariableDeProduccionUNITARIO;}
     
     public double getGastosDeFinancieros(){return GastosDeFinancieros;}
-    
                     
     public double getOtrosGastos(){return OtrosGastos;}
     
