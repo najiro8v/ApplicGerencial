@@ -19,6 +19,7 @@ public class CDirecto extends javax.swing.JFrame {
      */
     public CDirecto() {
         initComponents();this.setSize(700, 600);
+        this.setVisible(true);
         jPanel1.setSize(this.getSize());
         Fondo.setIcon(MYimage("gerencial1.png",this.getSize().width,this.getSize().height));
         Fondo.setSize(this.getSize());

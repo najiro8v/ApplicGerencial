@@ -31,7 +31,7 @@ gerencialprin gp;
         initComponents();
         this.setSize(860,860);
         Total_V.setEnabled(false);
-        jScrollPane1.setSize(this.getSize());
+        jScrollPane1.setSize(this.getSize().width-10,this.getSize().height);
         jPanel1.setSize(this.getSize());
         Fondo.setIcon(MYimage("gerencial2.png",this.getSize().width,this.getSize().height));
         Fondo.setSize(this.getSize());
@@ -604,7 +604,7 @@ gerencialprin gp;
 
     private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
         jPanel1.setSize(this.getSize());
-        jScrollPane1.setSize(this.getSize());
+        jScrollPane1.setSize(this.getSize().width-10,this.getSize().height-60);
         jSeparator1.setSize(this.getSize().width, 5);
         jSeparator2.setSize(this.getSize().width, 5);
         jSeparator3.setSize(this.getSize().width, 5);
@@ -693,6 +693,7 @@ gerencialprin gp;
            nuevo.setCostodeVVariable();
            
            nuevo.setCostodeVFijo();
+           nuevo.setUtilidad();
           /* nuevo.setGastos(Double.parseDouble(Gastos_financieros.getText()), Double.parseDouble(gasto_v_de_venta.getText()),
                            Double.parseDouble(gastos_de_Administracion.getText()),Double.parseDouble(Otros_gastos.getText()),
                            Double.parseDouble(Otros_productos.getText()));*/

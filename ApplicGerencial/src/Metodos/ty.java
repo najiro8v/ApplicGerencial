@@ -23,10 +23,9 @@ public class ty {
         System.out.println(temp.get(0).get());
         System.out.println(temp.get(0).shalom());
         
-    }
+    }*/
     public static void main(String [] args) 
-    { ty o =new ty();
-        o.neww();
+    { System.out.println(0/5);
     }
-  */  
+  
 }
